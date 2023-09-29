@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: 'champions';
+    src: url(Medias/Champions-Bold.ttf);
+}
+header{
+    height: 12vh;
+    background-color: rgb(181, 190, 216);
+    /* background-color: red; */
+    padding: 5px;
+}
+header img{
+    height: 10vh;
+    display: block;
+    margin: auto;
+}
+
+nav{
+    height: 14vh;
+    background-color: #0a1b51;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav img{
+    height: 15px;
+}
+
+nav button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: #33EFFF solid 3px;
+    background: none;
+    color: #33EFFF;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    transform: translate(-50%,-50%);
+    transition: all 0.5s ease;
+}
+
+nav button:hover{
+    background-color: #33EFFF;
+    color: #0a1b51;
+}
+
+.matchs{
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    transform: translateX(10vw);
+    margin-top: 5.5vh;
+    z-index: 1;
+}
+.match{
+    display: inline-block;
+    font-family: 'champions';
+    color: white;
+    margin-right: 20px;
+    transition: all 0.5s ease;
+}
+
+.match:hover{
+    transform: scale(1.2);
+}
+
+.div-button{
+    height: 14vh;
+    width: 10vw;
+    background-color: #0a1b51;
+    position: relative;
+    z-index: 2;
+}
+
+.match span{
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(255, 255, 255, 0.361);
+    transition: all 0.8s ease;
+    cursor: pointer;
+}
+
+.match span:hover{
+    text-decoration-color: #33EFFF;
+    text-decoration-thickness: 3px;
+}
+
+.accueil{
+    height: 74vh;
+}
+
+.accueil section{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.scroll{
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.scroll img{
+    height: 100px;
+}
+
+.scroll span{
+    font-family: 'champions';
+}
+
+h1{
+    font-family: 'champions';
+    font-size: 60px;
+    letter-spacing: 12px;
+    color: white;
+}
+
+h2{
+    font-family: 'champions';
+    font-size: 20px;
+    margin-top: 5px;
+    color: white;
+}
+
+.main{
+    background-image: url('Medias/Groupe\ 6.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.affiche{
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.affiche img{
+    width: 80px;
+    cursor: pointer;
+}
+
+.info{
+    font-size: 80%;
+}
+
+.info span:nth-child(1){
+    font-size: 120%;
+}
+
+.affiche span{
+    font-size: 160%;
+    font-family: 'champions';
+    color: white;
+}
+
+.info{
+    color: white;
+    font-family: 'champions';
+    text-align: center;
+}
+.trait{
+    width:  100%;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: #33EFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.info span{
+    font-size: 120%;
+}
+
+.joueur{
+    height: 86vh;
+    margin-top: 14vh;
+    width: 250px;
+}
+
+.joueur img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
