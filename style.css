@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
 body{
     overflow-x: hidden;
 }
@@ -15,6 +21,7 @@ header{
     background-color: rgb(181, 190, 216);
     /* background-color: red; */
     padding: 5px;
+    scroll-snap-align: center;
 }
 header img{
     height: 10vh;
@@ -26,77 +33,50 @@ nav{
     height: 14vh;
     background-color: #0a1b51;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
+    scroll-snap-align: top;
 }
 nav img{
-    height: 15px;
+    height: 1vw;
 }
 
-nav button{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: #33EFFF solid 3px;
-    background: none;
-    color: #33EFFF;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    cursor: pointer;
-    transform: translate(-50%,-50%);
-    transition: all 0.5s ease;
-}
-
-nav button:hover{
-    background-color: #33EFFF;
-    color: #0a1b51;
-}
-
-.matchs{
-    display: inline-block;
-    position: absolute;
-    white-space: nowrap;
-    transform: translateX(10vw);
-    margin-top: 5.5vh;
-    z-index: 1;
-}
 .match{
-    display: inline-block;
     font-family: 'champions';
-    color: white;
-    margin-right: 20px;
-    transition: all 0.5s ease;
+    color: rgba(255, 255, 255, 0.74);
+    transition: transform 0.5s ease;
+    font-size: 1.05vw;
+    border-right: 1px rgba(255, 255, 255, 0.71) solid;
+    border-left: 1px rgba(255, 255, 255, 0.71) solid;
+    padding: 0 1vw 0 1vw;
 }
 
 .match:hover{
     transform: scale(1.2);
 }
 
-.div-button{
-    height: 14vh;
-    width: 10vw;
-    background-color: #0a1b51;
-    position: relative;
-    z-index: 2;
-}
-
 .match span{
     margin-left: 5px;
     margin-right: 5px;
-    text-decoration: underline;
+    text-decoration: none;
+    /* text-decoration: underline;
+    margin: 0px 10px 0px 10px;
     text-decoration-thickness: 2px;
-    text-decoration-color: rgba(255, 255, 255, 0.361);
-    transition: all 0.8s ease;
+    text-decoration-color: rgba(255, 255, 255, 0.361); */
+    transition: text-decoration,text-decoration-thickness 0.5s ease;
     cursor: pointer;
 }
 
+a{
+    text-decoration: none;
+}
+
 .match span:hover{
+    line-height: 3px;
+    text-decoration: underline;
     text-decoration-color: #33EFFF;
     text-decoration-thickness: 3px;
 }
@@ -152,15 +132,16 @@ h2{
 
 .affiche{
     height: 100vh;
+    margin: 0 250px 0 250px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-
+    scroll-snap-align: center;
 }
 
 .affiche img{
-    width: 80px;
-    cursor: pointer;
+    width: 5vw;
+    margin: 0 20px 0 20px;
 }
 
 .info{
@@ -172,15 +153,17 @@ h2{
 }
 
 .affiche span{
-    font-size: 160%;
+    font-size: 2vw;
     font-family: 'champions';
     color: white;
+    opacity: 0;
 }
 
 .info{
     color: white;
     font-family: 'champions';
     text-align: center;
+    
 }
 .trait{
     width:  100%;
@@ -189,20 +172,75 @@ h2{
     background-color: #33EFFF;
     margin-top: 10px;
     margin-bottom: 10px;
+    min-width: 10px;
 }
 .info span{
-    font-size: 120%;
+    font-size: 1vw;
+    opacity: 0;
 }
 
-.joueur{
-    height: 86vh;
-    margin-top: 14vh;
-    width: 250px;
+.gauche{
+    position: absolute;
+    left: 1vw;
+}
+
+.droite{
+    position: absolute;
+    right: 1vw;
 }
 
 .joueur img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 20vw;
+    opacity: 0;
 }
+
+
+@keyframes apparition-joueurs-haut{
+    from{
+        transform: translateY(-300px);
+        opacity: 0;
+        /* width: 0px; */
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+        /* width: 200px; */
+    }
+}
+
+@keyframes apparition-joueurs-bas{
+    from{
+        transform: translateY(300px);
+        opacity: 0;
+        /* width: 0px; */
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+        /* width: 200px; */
+    }
+}
+
+@keyframes apparition-nomEkip{
+    from{
+        font-size: 0;
+        opacity: 0;
+    }
+    to{
+        font-size: 1.6vw;
+        opacity: 1;
+    }
+}
+
+@keyframes apparition-infos{
+    from{
+        font-size: 0;
+        opacity: 0;
+    }
+    to{
+        font-size: 1vw;
+        opacity: 1;
+    }
+}
+
 
